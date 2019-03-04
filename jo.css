@@ -1,0 +1,14 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #262626;
+    margin-left: 8%;
+    color:white;
+}
+
+.wd {max-width: 50%}
+
+#animation {
+    width: 32px;
+    height: 32px;
+    background: url("C:/Users/Giovanni/Desktop/Website/chappy.png")
+}
