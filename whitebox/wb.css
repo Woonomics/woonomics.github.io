@@ -13,6 +13,14 @@ body {
     margin-top: 30px;
 }
 
+#inputbar {
+    background: white;
+}
+
 a {
     color: grey;
+}
+
+#outputbar {
+    margin-top: 30px;
 }
