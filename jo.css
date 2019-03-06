@@ -48,8 +48,8 @@ nav a {
 }
 
 nav a:hover {
-  color: #000;
-  ;
+  color: grey;
+  text-shadow: 1px 1px 3px black;
 }
 
 nav a::before {
