@@ -5,15 +5,23 @@ $( document ).ready(function() {
             case "cazzo":
             $("#outputbar").html("Non dire parolacce.")
             break;
-            case "riccardo":
-            $("#outputbar").html("<img src=\"https://i.imgur.com/8Ix2n1A.jpg\">")
-            break;
             case "Riccardo":
-            $("#outputbar").html("<img src=\"https://i.imgur.com/8Ix2n1A.jpg\">")
+            $("#outputbar").html("<img src=\"https://i.imgur.com/8Ix2n1A.jpg\" width=\"50%\" height=\"50%\">")
             break;
             case "Federica":
-            $("#outputbar").html("<img src=\"https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-512.png\" width=\"40%\" height=\"40%\">");
+            $("#outputbar").html("<img src=\"https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-512.png\" width=\"50%\" height=\"50%\">");
             break;
+            case "Steven":
+            $("#outputbar").html("<img src=\"http://pngimg.com/uploads/carrot/carrot_PNG4985.png\" width=\"50%\" height=\"50%\">")
+            break;
+            case "Dolphin":
+            $("#outputbar").html("")
+            break;
+
+
+
+
+            
             default:
             $("#outputbar").html("")
             break;
