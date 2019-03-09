@@ -26,3 +26,50 @@ a {
     margin-bottom: 30px;
 }
 
+#rpsgame {
+    height: 60px;
+    width: 300px;
+
+}
+
+#rpsbox {
+    background-color: grey; /* Green */
+    border: solid;
+    color: white;
+    border-color: transparent;
+    border-radius: 10px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-width: 1px;
+}
+
+.rpsbutton {
+    border-radius: 8px;
+    font-family: 'Roboto Mono', monospace;
+    border-color: none;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0 2px #999;
+}
+
+.rpsbutton:hover {
+    background-color: #262626;
+    color: white;
+}
+
+.rpsbutton:active {
+    background-color: #262626;
+    box-shadow: 0 5px #666;
+    transform: translateY(3px);
+}
+
+
+#rpslog {
+    color: white;
+}
+
+#scoretable {
+    display: none;
+}
