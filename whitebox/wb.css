@@ -65,11 +65,17 @@ a {
     transform: translateY(3px);
 }
 
-
-#rpslog {
-    color: white;
-}
-
 #scoretable {
     display: none;
+}
+#rpsplayer {
+    margin-bottom: -12px;
+}
+#rpscpu {
+    margin-bottom: -12px;
+}
+
+#pscore {
+    position: relative;
+
 }

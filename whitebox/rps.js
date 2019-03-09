@@ -66,8 +66,8 @@ function GameStart() {
     }
 
 GameScore();
-console.log(Pchoice, AIchoice);
-console.log(cP, cCPU);
+//console.log(Pchoice, AIchoice);
+//console.log(cP, cCPU);
 
 document.getElementById("scoretable").style.display = "block";
 
@@ -77,9 +77,10 @@ document.getElementById("scoretable").style.display = "block";
 
 var player_score = 0;
 var enemy_score = 0;
-
+var totscore = 0;
 
 function GameScore(){
+
     if (cP == cCPU) {
         document.getElementById("rpsscore").innerHTML = "It's a Tie!";
     }
@@ -136,6 +137,10 @@ function GameScore(){
             document.getElementById("rpsscore").innerHTML = "Something is wrong";
         break;
         }
+    
+    totscore = (player_score - enemy_score)
+    document.getElementById("totalscore").innerHTML = totscore;
+    console.log(totscore)
     }
 
 
@@ -143,3 +148,6 @@ document.getElementById("pscore").innerHTML = player_score;
 document.getElementById("cpuscore").innerHTML = enemy_score;
 
 }
+
+
+
