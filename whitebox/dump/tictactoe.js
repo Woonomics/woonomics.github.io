@@ -16,10 +16,12 @@ const cells = document.querySelectorAll('.cell');
 startGame();
 
 function startGame() {
-  document.querySelector('.endgame').style.display = "none";
+  document.getElementById('endgame').style.display = "none";
   for (let i = 0; i < cells.length; i++) {
     cells[i].innerText = '';
     cells[i].style.removeProperty('background-color');
   }
+
+
 }
 

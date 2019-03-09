@@ -17,12 +17,16 @@ a {
     color: grey;
 }
 
+#tgame{
+
+
+}
+
 td {
     border: 2px solid white;
     height: 70px;
     width: 70px;
     text-align: center;
-    vertical-align: middle;
     font-size: 60px;
     cursor: pointer;
 }
@@ -48,15 +52,43 @@ table tr td:last-child {
     border-right: 0;
 }
 
-.endgame {
+#replay {
+    border-radius: 8px;
+    font-family: 'Roboto Mono', monospace;
+    border-color: none;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0 2px #999;
+    margin-top: 30px;
     display: block;
-    margin-top: -170px;
-    margin-left: 15px;
-    position: absolute;
-    width: 10px;
-    background-color: red;
+    position: relative;
+}
+
+#replay:hover {
+    background-color: #262626;
+    color: white;
+}
+
+#replay:active {
+    background-color: #262626;
+    box-shadow: 0 5px #666;
+    transform: translateY(3px);
+}
+
+#subtitle {
+    margin-top: -15px;
+}
+
+#endgame {
+    display: block;
+    margin-top: 5px;
+    width: 210px;
+    background-color: lightcoral;
     color: black;
     text-align: center;
-    padding: 5px 90px 10px 5px;
-    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 20px;
+    display: none;
+
+
 }
