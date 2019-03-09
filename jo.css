@@ -1,22 +1,27 @@
 body {
-    font-family: 'Roboto Mono', monospace;
-    background-color: #262626;
-    margin-left: 8%;
-    color:white;
-    min-width: 280px;
-    width: 60%;
-    max-width: 400px;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #262626;
+  margin-left: 8%;
+  color:white;
+  min-width: 280px;
+  width: 60%;
+  max-width: 400px;
 }
 
 .title {
-    min-width: 200%;
+    min-width: 100%;
     margin-left: 5px;
     margin-bottom: 6px;
 }
 
 .tpm {margin-top: 10px;}
-.wd {min-width: 500px;
-margin-bottom: 40px;}
+
+.wd {
+  min-width: 300px;
+  margin-bottom: 40px;
+
+
+}
 
 
 
@@ -32,7 +37,7 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin-left: 6px;
+  margin-left: 2px;
   padding-top: 1px;
 
   position: relative;
