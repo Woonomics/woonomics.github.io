@@ -1,0 +1,80 @@
+#goback {
+    margin-bottom: -20px;
+    margin-top: 30px;
+}
+
+#subtitle {
+    margin-top: -15px;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #262626;
+    margin-left: 8%;
+    color:white;
+    min-width: 280px;
+    width: 60%;
+    max-width: 800px;
+    
+}
+
+#gamebox{
+    font-size: 120%;
+}
+
+a {
+    color: grey;
+
+}
+
+.press {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    cursor: pointer;
+}
+
+
+#sell:hover{
+    color: black;
+    background-color: green;
+}
+
+#sell:active{
+    color: greenyellow;
+    background-color: black;
+}
+
+#sell{
+    background-color: #262626;
+}
+
+#make:hover{
+    color: black;
+    background-color: darkgoldenrod;
+}
+
+#make:active{
+    color: yellow;
+    background-color: black;
+}
+
+#make{
+    background-color: #262626;
+}
+
+
+
+#gamebox {
+    display: block;
+}
+
+#gamebox_text {
+    margin-left: 2%;
+}
+
+
+#passive_income_bar{
+    display: none;
+}
