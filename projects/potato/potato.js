@@ -1,3 +1,4 @@
+
 //declaring production variables
 var update_time = 1000
 var money = 0
@@ -21,19 +22,20 @@ var txt = ``
 //game progression
 var potato_tot = 0;
 
-
-
 // this function updates all variables every "update_time" milliseconds
 function gameloop() {
 
     $("#money").html(money)
     $("#potato").html(potato)
+    $("#potato_tot").html(potato_tot)
     $("#potato_price").html(potato_price)
     $("#potato_time").html(potato_time_seconds)
-    $("#potato_tot").html(potato_tot)
+
+    
 
 }
 setInterval(gameloop, update_time)
+
 
 
 // production functions
@@ -54,8 +56,10 @@ function make() {
     type_speed = 30
     txt = `You made 1 potato, keep on going.`
     
+    game_started = 1
     potato_flash()
     salesWriter()
+
 }
 
 function sell() {
