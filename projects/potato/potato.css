@@ -29,6 +29,14 @@ a {
 
 }
 
+.shop {
+
+    background-color: black;
+    color: #ffda0a;
+    display: block;
+    max-width: 70%;
+}
+
 .press {
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -38,26 +46,27 @@ a {
 }
 
 
-#sell:hover{
+#sell:hover {
     color: black;
     background-color: green;
 }
 
-#sell:active{
+#sell:active {
     color: greenyellow;
     background-color: black;
 }
 
-#sell{
+#sell {
     background-color: #262626;
 }
 
-#make:hover{
+#make:hover {
     color: black;
     background-color: darkgoldenrod;
 }
 
-#make:active{
+#make:active {
+    
     color: yellow;
     background-color: black;
 }
@@ -78,9 +87,38 @@ a {
 
 
 #passive_income_bar{
+
     display: none;
+
 }
 
 #progress_log_bar{
+
     font-style: italic;
+
+}
+
+#potato_maker:hover {
+    color: black;
+    background-color: darkgoldenrod;
+}
+
+#potato_maker:active {
+    
+    color: yellow;
+    background-color: black;
+}
+
+
+#buy_potato_maker:hover{
+
+    color:black;
+    background-color:white;
+
+}
+
+#buy_potato_maker:active{
+
+    color: purple;
+
 }

@@ -13,6 +13,12 @@ var potato_time = 0
 var potato_time_seconds = potato_time/1000
 
 
+//upgrades
+var potato_maker_count = 0;
+var potato_maker_price = 100;
+
+
+
 //log variables for SALES
 var iS = 0;
 var tempstringSales = ''
@@ -25,10 +31,16 @@ var txtProg = ``
 
 //game progression
 var potato_tot = 0;
+var money_tot = 0;
 //progress checks
 var prog0 = 0;
 var prog1 = 0;
-
+var prog2 = 0;
+//game hides
+$("#progress0").css({"display":"none"});
+$("#progress1").css({"display":"none"});
+$("#progress2").css({"display":"none"});
+$("#potato_maker_div").css({"display":"none"});
 
 //first game checks
 $("#money").html(money)
@@ -36,6 +48,9 @@ $("#potato").html(potato)
 $("#potato_tot").html(potato_tot)
 $("#potato_price").html(potato_price)
 $("#potato_time").html(potato_time_seconds)
+
+$("#potato_maker_count").html(potato_maker_count)
+$("#potato_maker_price").html(potato_maker_price)
 //first progress check call
 progressCheck()
 // this function updates all variables every "update_time" milliseconds
@@ -81,6 +96,7 @@ function sell() {
 
     type_speed = 30
     money += potato*potato_price
+    money_tot += money
 
     if (potato == 0) {
         txtSales = `You sold no potatoes. You should make some.`
@@ -104,9 +120,54 @@ function sell() {
     
 }
 
+
+function potato_maker() {
+
+    $("#potato_maker_div").toggle()
+}
+
+function buy_potato_maker() {
+
+    if (money <= potato_maker_price) {
+
+        flash_potato_maker_RED()
+        return
+
+    }
+    
+    if (money >= potato_maker_price){
+
+        money -= potato_maker_price
+        potato_maker_count++
+
+        potato_maker_price += potato_maker_count*potato_maker_price/2
+
+        $("#potato_maker_count").html(potato_maker_count)
+        $("#potato_maker_price").html(potato_maker_price)
+
+        setInterval(potato_maker_production, 5000)
+        $("#potato").html(potato)
+        flash_potato_maker_GREEN()
+        return
+    }    
+}
+
+potato_maker_production()
+function potato_maker_production() {
+    
+    if (potato_maker_count != 0){
+
+        potato += 1
+        flash_potato_maker_plus_one()
+    }
+}
+
+
 $("#sell").click(sell)
 $("#make").click(make)
 
+$("#potato_maker").click(potato_maker)
+$("#buy_potato_maker").click(buy_potato_maker)
 
 //potato_price changes
 price_change()
@@ -154,7 +215,7 @@ function price_change(){
 
 
 
-// terminal logs
+////// terminal logs
 
 function salesWriter() {
 
@@ -300,6 +361,47 @@ function potato_price_flash_ONE() {
 
 }
 
+function flash_potato_maker_RED() {
+    
+    function flashin() {  
+        $('#potato_maker_bar').css({"color":"white","background-color":"red"});
+    }
+    function flashout() {  
+        $('#potato_maker_bar').css({"color":"yellow","background-color":"black"});
+    }
+    flashin()
+    setTimeout(flashout, potato_price_anim_speed)
+}
+
+function flash_potato_maker_GREEN() {
+    
+    function flashin() {  
+        $('#potato_maker_bar').css({"color":"white","background-color":"green"});
+        $('#potato_maker_count_bar').css({"color":"white","background-color":"green"});
+    }
+    function flashout() {  
+        $('#potato_maker_bar').css({"color":"yellow","background-color":"black"});
+        $('#potato_maker_count_bar').css({"color":"yellow","background-color":"black"});
+    }
+    flashin()
+    setTimeout(flashout, potato_price_anim_speed)
+}
+
+function flash_potato_maker_plus_one() {
+    
+    function flashin() {  
+        $('#potato_maker').css({"color":"white","background-color":"purple"});
+        $('#potato_bar').css({"color":"white","background-color":"purple"});
+    }
+    function flashout() {  
+        $('#potato_maker').css({"color":"white","background-color":"#262626"});
+        $('#potato_bar').css({"color":"white","background-color":"#262626"});
+    }
+    flashin()
+    setTimeout(flashout, potato_price_anim_speed)
+}
+
+
 //////progress function
 function progressCheck(){
 
@@ -330,6 +432,19 @@ function progressCheck(){
             ProgWriter()
             prog1 = 1
         }
+    }
+
+    if (money_tot >= 25){
+    
+        $("#progress2").css({"display":"inline-block"});
+        txtProg = `What do you need money for? Making more potatoes of course!`
+        
+        if (prog2 === 0){
+
+            type_speed = 60
+            ProgWriter()
+            prog2 = 1
+        }
 
     }
 
@@ -348,4 +463,4 @@ function rand_int_range(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //Il max è incluso e il min è incluso 
-  }
+}
