@@ -13,15 +13,31 @@ var potato_time = 0
 var potato_time_seconds = potato_time/1000
 
 
-//log variables
-var i = 0;
-var tempstring = ''
-var txt = ``
+//log variables for SALES
+var iS = 0;
+var tempstringSales = ''
+var txtSales = ``
+//log variables for PROGRESS
+var iP = 0;
+var tempstringProg = ''
+var txtProg = ``
 
 
 //game progression
 var potato_tot = 0;
+//progress checks
+var prog0 = 0;
+var prog1 = 0;
 
+
+//first game checks
+$("#money").html(money)
+$("#potato").html(potato)
+$("#potato_tot").html(potato_tot)
+$("#potato_price").html(potato_price)
+$("#potato_time").html(potato_time_seconds)
+//first progress check call
+progressCheck()
 // this function updates all variables every "update_time" milliseconds
 function gameloop() {
 
@@ -31,8 +47,7 @@ function gameloop() {
     $("#potato_price").html(potato_price)
     $("#potato_time").html(potato_time_seconds)
 
-    
-
+    progressCheck()
 }
 setInterval(gameloop, update_time)
 
@@ -54,7 +69,7 @@ function make() {
     $("#potato").html(potato)
 
     type_speed = 30
-    txt = `You made 1 potato, keep on going.`
+    txtSales = `You made 1 potato, keep on going.`
     
     game_started = 1
     potato_flash()
@@ -68,16 +83,16 @@ function sell() {
     money += potato*potato_price
 
     if (potato == 0) {
-        txt = `You sold no potatoes. You should make some.`
+        txtSales = `You sold no potatoes. You should make some.`
 
     }
     if (potato == 1) {
-        txt = `You sold 1 potato for ${potato_price}$!`
+        txtSales = `You sold 1 potato for ${potato_price}$!`
         money_flash()
         log_flash_green()
     }
     if (potato > 1) {
-        txt = `You sold ${potato} potatoes for ${potato_price}$ each, making ${potato*potato_price}$!`
+        txtSales = `You sold ${potato} potatoes for ${potato_price}$ each, making ${potato*potato_price}$!`
         money_flash()
         log_flash_green()
     }
@@ -139,28 +154,28 @@ function price_change(){
 
 
 
-// terminal log
+// terminal logs
 
 function salesWriter() {
 
     var end = 0
 
-    if (i < txt.length) {
+    if (iS < txtSales.length) {
         
-        tempstring += txt.charAt(i)
-        $("#log_active").html(tempstring)
+        tempstringSales += txtSales.charAt(iS)
+        $("#log_active").html(tempstringSales)
         
-        i++
+        iS++
     }
     
-    if (i == txt.length) {
+    if (iS == txtSales.length) {
 
-        i = 0
+        iS = 0
         end = 1
         if (end == 1) {
 
-            tempstring = ``
-            txt = ``
+            tempstringSales = ``
+            txtSales = ``
             
             return
         }
@@ -170,13 +185,41 @@ function salesWriter() {
     setTimeout(salesWriter, type_speed);
 }
 
+function ProgWriter() {
+
+    var endP = 0
+
+    if (iP < txtProg.length) {
+        
+        tempstringProg += txtProg.charAt(iP)
+        $("#log_progress").html(tempstringProg)
+        
+        iP++
+    }
+    
+    if (iP == txtProg.length) {
+
+        iP = 0
+        endP = 1
+        if (endP == 1) {
+
+            tempstringProg = ``
+            txtProg = ``
+            
+            return
+        }
+         
+    }
+
+    setTimeout(ProgWriter, type_speed);
+}
 
 /////flashing functions
 
 function money_flash() {
 
     function flashin() {  
-        $('#money_bar').css({"color":"black","background-color":"yellow"});
+        $('#money_bar').css({"color":"green","background-color":"yellow"});
     }
     function flashout() {  
         $('#money_bar').css({"color":"white","background-color":"#262626"});
@@ -256,6 +299,43 @@ function potato_price_flash_ONE() {
     setTimeout(flashout, potato_price_anim_speed)
 
 }
+
+//////progress function
+function progressCheck(){
+
+    
+    if (potato_tot === 0){
+
+        $("#progress0").css({"display":"none"});
+        txtProg = `Come on, click "Make potatoes"!`
+        
+        if (prog0 === 0){
+
+            type_speed = 60
+            ProgWriter()
+            prog0 = 1
+        }
+        
+
+    }
+
+    if (potato_tot >= 5){
+        
+        $("#progress0").css({"display":"inline-block"});
+        txtProg = `Now you can sell potatoes, and earn money!`
+        
+        if (prog1 === 0){
+
+            type_speed = 60
+            ProgWriter()
+            prog1 = 1
+        }
+
+    }
+
+
+}
+
 
 
 
