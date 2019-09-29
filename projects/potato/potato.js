@@ -367,7 +367,7 @@ function flash_potato_maker_RED() {
         $('#potato_maker_bar').css({"color":"white","background-color":"red"});
     }
     function flashout() {  
-        $('#potato_maker_bar').css({"color":"yellow","background-color":"black"});
+        $('#potato_maker_bar').css({"color":"yellow","background-color":"darkgoldenrod"});
     }
     flashin()
     setTimeout(flashout, potato_price_anim_speed)
@@ -380,8 +380,8 @@ function flash_potato_maker_GREEN() {
         $('#potato_maker_count_bar').css({"color":"white","background-color":"green"});
     }
     function flashout() {  
-        $('#potato_maker_bar').css({"color":"yellow","background-color":"black"});
-        $('#potato_maker_count_bar').css({"color":"yellow","background-color":"black"});
+        $('#potato_maker_bar').css({"color":"black","background-color":"darkgoldenrod"});
+        $('#potato_maker_count_bar').css({"color":"black","background-color":"darkgoldenrod"});
     }
     flashin()
     setTimeout(flashout, potato_price_anim_speed)
