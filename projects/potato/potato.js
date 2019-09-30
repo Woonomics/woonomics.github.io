@@ -140,7 +140,7 @@ function buy_potato_maker() {
         money -= potato_maker_price
         potato_maker_count++
 
-        potato_maker_price += potato_maker_count*potato_maker_price/2
+        potato_maker_price += potato_maker_count*potato_maker_price/10
 
         $("#potato_maker_count").html(potato_maker_count)
         $("#potato_maker_price").html(potato_maker_price)
