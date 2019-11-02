@@ -12,6 +12,9 @@
   src: url("WorkSans-Regular.ttf");
 }
 
+button{
+  font-family: var(--font);
+}
 
 html, body {
   width: 100%;
@@ -57,6 +60,7 @@ html, body {
 #content {
   background: var(--bg-color);
   width: 70%;
+
 }
 
 
@@ -90,7 +94,6 @@ html, body {
   cursor:pointer;
   position: absolute;
 
-  
 }
 
 .side_button{
@@ -98,12 +101,8 @@ html, body {
   display: block;
   background-color: transparent;
   color: white;
-
   padding: 15px;
-
-
   border-right: 5px solid white;
-
   text-decoration: none;
   text-align: center;
   font-style: italic;
@@ -154,7 +153,7 @@ html, body {
   }
 }
 
-#potato_market_page{
+#upgrades_page{
   display: none;
 }
 
@@ -181,23 +180,36 @@ html, body {
 
 #infobar{
 
-  background: linear-gradient(310deg, rgba(0,0,0,1) -300%, rgba(38,38,38,1) 100%);
+  background: linear-gradient(0deg, rgba(38,38,38,0.75) 0%, rgba(13,255,23,1) 40%, rgba(13,255,23,1) 60%, rgba(38,38,38,0.75) 100%);
   display: block;
   position: absolute;
   width: 100%;
-  bottom: 0px;
-  right: 0px;
+  color: black;
+  font-weight: bold;
+  bottom: 20%;
+  text-align: center;
+  align-content: center;
+  font-size: 200%;
+  font-style: italic;
+  display: none;
+
+
 }
 
 #info{
 
-  color: white;
-  font-style: italic;
-  font-size: 120%;
-  margin-left: 20px;
-  margin-right: 5px;
+  color: black;
 
 }
+
+
+#main_title{
+  margin-top: 0px;
+}
+
+
+
+
 
 
 
@@ -226,7 +238,6 @@ html, body {
   color: white;
   font-size: 150%;
   font-weight: bold;
-  font-family: var(--font);
   background: linear-gradient(270deg, rgba(38,38,38,1) 0%, rgba(55,53,0,0.5) 50%, rgba(38,38,38,1) 100%);
   padding: 30px;
   border: none;
@@ -250,12 +261,12 @@ html, body {
   color: white;
   font-size: 150%;
   font-weight: bold;
-  font-family: var(--font);
-  background: linear-gradient(270deg, rgba(38,38,38,1) 0%, rgba(43,0,0,0.5) 50%, rgba(38,38,38,1) 100%);
+  background: linear-gradient(270deg, rgba(38,38,38,0.5) 0%, rgba(74,0,0,0.5) 50%, rgba(38,38,38,0.5) 100%);
   padding: 30px;
   border: none;
   width: 100%;
-  display: none;
+  text-align: center;
+
 
 }
 
@@ -275,13 +286,13 @@ html, body {
 
   color: white;
   font-size: 150%;
-  font-family: var(--font);
   font-weight: bold;
   background: linear-gradient(270deg, rgba(38,38,38,1) 0%, rgba(12,55,0,0.5) 50%, rgba(38,38,38,1) 100%);
   border: none;
   padding: 30px;
-  float: right;
   width: 100%;
+  text-align: center;
+
 
 }
 
@@ -291,28 +302,36 @@ html, body {
 
 #price_counter{
   
-  color: white;
-  font-size: 150%;
-  font-weight: bold;
-  font-family: var(--font);
   background: linear-gradient(270deg, rgba(38,38,38,1) 0%, rgba(5, 24, 0, 0.5) 50%, rgba(38,38,38,1) 100%);
+  color: white;
+  font-size: 120%;
+  font-weight: bold;
   border: none;
   padding: 10px;
-  float: right;
   width: 100%;
   text-align: center;
-  margin-top: 0;
-  font-size: 120%;
+  pointer-events: none;
+
 
 }
+
+#power_counter{
+
+  background: linear-gradient(270deg, rgba(38,38,38,0.5) 0%, rgba(54,0,0,0.5) 50%, rgba(38,38,38,0.5) 100%);
+  font-size: 120%;
+  font-weight: bold;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+  color: white;
+
+}
+
 
 #main_counter{
   text-align: center;
-}
-
-#market_counter{
-  text-align: center;
-  margin-top: 180px;
 }
 
 
@@ -321,9 +340,12 @@ html, body {
 }
 
 .potato_maker_container{
+
   display: flex;
   justify-content: center; 
+  
 }
+
 
 .potato_maker_box{
 

@@ -12,6 +12,9 @@
 </head>
 
 <body>
+        <footer id="infobar">
+                <p id="info">Test message flash!</p>
+            </footer>
 
 
     <div id="sidebar" class="collapsed">
@@ -23,8 +26,8 @@
 
             </p>
             <a class="side_button" onclick="show_make_page()">Make Potatoes</a>
-            <a class="side_button" onclick="show_potato_market_page()" id="show_potato_market_page">Potato Market</a>
             <a class="side_button" onclick="show_potato_makers_page()">Potato Makers</a>
+            <a class="side_button" onclick="show_upgrades_page()">Upgrades</a>
             <a class="side_button" onclick="show_statistics_page()">Statistics</a>
             <a class="side_button" onclick="show_settings_page()">Settings</a>
             <a class="side_button" onclick="show_howtoplay_page()">How to play</a>
@@ -34,11 +37,11 @@
 
     </div>
 
+
+
     <div id="content">
 
-        <footer id="infobar">
-            <p id="info">Potato Game 2 welcomes you.</p>
-        </footer>
+
 
 
 
@@ -47,43 +50,34 @@
         <div class="page" id="make_page">
 
             <h1 class="title" id="main_title">Potato Game 2</h1>
-            <h2 class="subtitle">Make potatoes.</h2>
+            <h2 class="subtitle">Make potatoes. Sell Potatoes.</h2>
 
             <button id="make_potato" onclick="make()">Make Potato</button>
+            
+            <button id="sell_potato">Sell ALL Potatoes</button>
+            
+            <button id="price_counter">a potato sells for <a id="potato_price">X</a>$</button>
 
             <h2 id="main_counter">You have <br>
-                <a class="potato_count">X</a><br>potatoes.<br>
-            </h2>
-
-            <h2 class="tot_counter">You made
-                <a class="potato_tot">X</a> potatoes in total.<br>
-            </h2>
-
-            <button id="make_power">Increase Potato Power</button>
-
-
-        </div>
-
-        <div class="page" id="potato_market_page">
-
-            <h1 class="title">Potato Market</h1>
-            <h2 class="subtitle">Sell your precious potatoes!</h2>
-
-            <button id="sell_potato">Sell ALL Potatoes</button>
-            <h2 id="price_counter">A potato sells for <a id="potato_price">X</a>$</h2>
-
-            <h2 id="market_counter">You have <br>
                 <a class="potato_count">X</a> potatoes <br>
                 and<br>
                 <a id="money_count">X</a> dollars.
             </h2>
 
 
-            <br><br><br><br>
+            <h2 class="tot_counter">You made
+                <a class="potato_tot">X</a> potatoes in total.<br>
+            </h2>
+
+            <button id="power_counter">your power is <a id="power">X</a>!</button>
+            <button id="make_power">Increase Potato Power</button>
+
+
         </div>
 
         <div class="page" id="potato_makers_page">
             <h1 class="title">Potato Makers</h1>
+            <h2 class="subtitle">They make potatoes for you!</h2>
 
             <div class="potato_maker_container">
 
@@ -128,7 +122,16 @@
                 </div>
     
 
-            <br><br><br><br>
+
+        </div>
+
+        <div class="page" id="upgrades_page">
+
+            <h1 class="title">Upgrades</h1>
+            <h2 class="subtitle">Powerup!</h2>
+
+
+
         </div>
 
         <div class="page" id="statistics_page">
@@ -138,14 +141,14 @@
                 <a class="potato_tot">X</a> potatoes in total.<br>
             </h2>
 
-            <br><br><br><br>
+
         </div>
 
         <div class="page" id="settings_page">
             <h1 class="title">Game Settings</h1>
             
 
-            <br><br><br><br>
+
         </div>
 
         <div class="page" id="howtoplay_page">
@@ -188,14 +191,14 @@
 
 
             </txt>
-            <br><br><br><br>
+
         </div>
 
         <div class="page" id="about_page">
             <h1 class="title">About the game</h1>
             <h2 class="subtitle">Potato Game 2</h2>
 
-                <text id="goback" style="font-weight: bold;">Go back to <a style="text-decoration: underline;" href="../../projects.html"> >>Projects</a></text><br><br>
+                <text id="goback" style="font-weight: bold;">Go back to <a style="color: white;" href="../../projects.html"> >>Projects</a></text><br><br>
 
                 -----The game is still unplayable-----<br>
                 I hope you're enjoying making potatoes!<br>
@@ -216,7 +219,6 @@
 
 
 
-            <br><br><br><br>
         </div>
 
     </div>
