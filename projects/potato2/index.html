@@ -53,9 +53,12 @@
             <h1 class="title" id="main_title">Potato Game 2</h1>
             <h2 class="subtitle">Make potatoes. Sell Potatoes.</h2>
 
+            <button id="make_power" onclick="increase_power()">Increase Potato Power</button>
+            <button id="power_counter">your power is <a id="power">X</a>!</button>
+
             <button id="make_potato" onclick="make()">Make Potato</button>
             
-            <button id="sell_potato">Sell ALL Potatoes</button>
+            <button id="sell_potato" onclick="sell()">Sell ALL Potatoes</button>
             
             <button id="price_counter">a potato sells for <a id="potato_price">X</a>$</button>
 
@@ -65,13 +68,6 @@
                 <a id="money_count">X</a> dollars.
             </h2>
 
-
-            <h2 class="tot_counter">You made
-                <a class="potato_tot">X</a> potatoes in total.<br>
-            </h2>
-
-            <button id="power_counter">your power is <a id="power">X</a>!</button>
-            <button id="make_power">Increase Potato Power</button>
 
 
         </div>
