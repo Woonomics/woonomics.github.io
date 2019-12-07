@@ -24,17 +24,16 @@ body {
 #subtitle {
 
     font-size: 50px;
-
     background: -webkit-linear-gradient(90deg, rgba(116,0,221,1) 0%, rgba(59,149,227,1) 35%, rgba(0,212,255,1) 100%);
-
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-left: 10%;
     display: block;
     font-weight: 100;
-    clear:none;
-    margin-top: -70;
+    
+    margin-top: -70px;
+    
 }
 
 @media screen and (min-width: 1200px){
@@ -71,14 +70,13 @@ body {
 }
 
 #email {
-    background-size: 20px 20px;
+
     background: white;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
     display:block;
-    width: 100%;
     font-weight: 100;
     
 }

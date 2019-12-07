@@ -21,14 +21,14 @@ function subtitle(){
 			tempstring += subtitle_string.charAt(counter)
 			
 			subtitle_show.innerHTML = tempstring
-			console.log(tempstring)
+
 
 			counter++
 		}
 
 		if(tempstring.length >= subtitle_string.length){
 			
-			console.log("done")
+
 			type_speed = 1000
 
 			if (underscore == 0) {
@@ -36,10 +36,10 @@ function subtitle(){
 				tempstring += "_"
 			
 				subtitle_show.innerHTML = tempstring
-				console.log(tempstring)
+
 	
 				underscore = 1
-				console.log("underscore is now 1")
+
 
 
 			} else {
@@ -50,10 +50,9 @@ function subtitle(){
 
 			
 				subtitle_show.innerHTML = tempstring
-				console.log(tempstring)	
+
 
 				underscore = 0
-				console.log("underscore is now 0")
 
 
 			}
