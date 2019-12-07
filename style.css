@@ -45,12 +45,17 @@ body {
 
 @media screen and (min-width: 1800px){
     #subtitle {
-        margin-left: 0%;
+
+        margin-left: auto;
         margin-right: auto;
 
     }
-}
+    #subtitle_box{
 
+        margin-left: 25%;
+    
+    }
+}
 
 
 .line {
@@ -63,7 +68,7 @@ body {
 
 }
 
-@media screen and (min-width: 1200px){
+@media screen and (min-width: 1800px){
     .line {
         
 
