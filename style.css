@@ -15,7 +15,7 @@ body {
 
     font-weight: 100;
 
-    background: -webkit-linear-gradient(90deg, rgba(116,0,221,1) 0%, rgba(59,149,227,1) 35%, rgba(0,212,255,1) 100%);
+    background:  rgba(0,212,255,1);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
