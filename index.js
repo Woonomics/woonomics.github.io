@@ -1,4 +1,3 @@
-
 //TYPE economics student and hobbyst programmer 
 
 function subtitle(){
@@ -9,7 +8,7 @@ function subtitle(){
 	var subtitle_show = document.getElementById("subtitle")
 	
 	var tempstring = ""
-	var subtitle_string = "economics <br> student and <br> hobbyst <br> programmer"
+	var subtitle_string = "economics<br> student and<br> hobbyst<br> programmer "
 	
 	var type_speed = 50
 	
@@ -33,6 +32,7 @@ function subtitle(){
 
 			if (underscore == 0) {
 
+                tempstring = tempstring.substring(0, tempstring.length - 1);
 				tempstring += "_"
 			
 				subtitle_show.innerHTML = tempstring
@@ -47,8 +47,7 @@ function subtitle(){
 				(underscore == 1) 
 
 				tempstring = tempstring.substring(0, tempstring.length - 1);
-
-			
+                tempstring += " "
 				subtitle_show.innerHTML = tempstring
 
 
