@@ -10,15 +10,17 @@ body {
 #title {
 
     font-size: 95px;
-    background: -webkit-linear-gradient(30deg, rgba(116,0,221,1) 0%, rgba(59,149,227,1) 35%, rgba(0,212,255,1) 100%);
+
+    background: -webkit-linear-gradient(90deg, rgba(116,0,221,1) 0%, rgba(59,149,227,1) 35%, rgba(0,212,255,1) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center;
     margin-top: 120px;
     display: block;
     width: 100%;
     font-weight: 100;
+
+    margin-left: 25%;
 
 }
 
@@ -31,74 +33,58 @@ body {
 #subtitle {
 
     font-size: 50px;
-    background: -webkit-linear-gradient(90deg, rgba(116,0,221,1) 0%, rgba(59,149,227,1) 35%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(116,0,221,1) 0%, rgba(59,149,227,1) 15%, rgba(0,212,255,1) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
     font-weight: 100;
     margin-top: -60px;
-    margin-left: 0%;
+    margin-left: 2%;
     
 }
 
-@media screen and (min-width: 1366px){
-    #subtitle {
-
-        margin-left: auto;
-
-    }
-    #subtitle_box{
-
-        margin-left: 37.5%;
-    
-    }
-}
 
 
 .line {
 
     border: none;
-    width: 50%;
     height: 2px;
+    margin-left: 25%;
+    width: 675px;
     background: -webkit-linear-gradient(30deg, rgba(116,0,221,1) 0%, rgba(59,149,227,1) 35%, rgba(0,212,255,1) 100%);
 
 }
 
-@media screen and (min-width: 1366px){
-    .line {
-        
-        width: 25%;
-
-    }
-}
 
 
 .chapter {
 
     font-size: 40px;
-    background: -webkit-linear-gradient(30deg, rgba(116,0,221,1) 0%, rgba(59,149,227,1) 35%, rgba(0,212,255,1) 100%);
+    background: -webkit-linear-gradient(rgba(59,149,227,1) 0%, rgba(0,212,255,1) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center;
     display:block;
-    width: 100%;
-    font-weight: 100;
 
-    
+    font-weight: 100;
+    margin-left: 26.5%;
+
 
 }
 
-
 #email {
 
-    background: white;
+    font-size: 40px;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(171,174,175,1) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center;
     display:block;
+
+    margin-left: 26.5%;
+    margin-top: -40px;
+
     font-weight: 100;
     color: black;
     
