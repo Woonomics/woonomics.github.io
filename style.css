@@ -42,7 +42,7 @@ body {
     
 }
 
-@media screen and (min-width: 1900px){
+@media screen and (min-width: 1366px){
     #subtitle {
 
         margin-left: auto;
@@ -65,7 +65,7 @@ body {
 
 }
 
-@media screen and (min-width: 1900px){
+@media screen and (min-width: 1366px){
     .line {
         
         width: 25%;
@@ -90,25 +90,6 @@ body {
 
 }
 
-.lined {
-
-    display:flex;
-
-}
-
-.lined:before, .lined:after {
-    
-    color:white;
-    content:'';
-    flex:1;
-    border-bottom:groove 2px;
-    margin:auto 0.25em;
-    box-shadow: 0 -1px ;/* ou 0 1px si border-style:ridge */
-    border: none;
-    width: 50%;
-    height: 2px;
-
-}
 
 #email {
 
@@ -123,24 +104,4 @@ body {
     
 }
 
-.text {
-
-    font-size: 30px;
-    font-weight: 100;
-    text-align: left;
-    display: block;
-
-    margin-left: 5%;
-    margin-right: 5%;
-    
-
-}
-
-@media screen and (min-width: 1800px){
-
-    .text{
-        margin-left: 20%;
-        margin-right: 20%;
-    }
-}
 
