@@ -148,6 +148,14 @@
                 
             </div>
 
+            <div v-if="blackjack_bet_m===1.0" class="upgrade_blackjack">
+
+                Upgrade Simpler Blackjack winnings from 1.1 to 1.2
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(1.2, 650, 'blackjack')">Buy for 600</button>
+                
+            </div>
+
 
             <!-- power section -->
 
