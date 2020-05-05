@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name='viewport' content='width=device-width', initial-scale=1, charset="utf-8">
+<title>Potato Game 2: Casino Royale</title>
+<link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+<body>
+
+    <div id='app'>
+
+        <div id="tabs" v-if="tab!=='blackjack_play'">
+
+        <button class="menu_button" v-on:click="tab = 'potatoes'">Potatoes</button>
+        <button class="menu_button" v-on:click="tab = 'upgrades'">Upgrades</button>
+        <button class="menu_button" v-on:click="tab = 'casino'">Casino</button>
+        <button class="menu_button" v-on:click="tab = 'info'">Info</button>
+
+        </div>
+
+        <div v-if="tab === 'potatoes'">
+
+            <h3 v-if='number === 0'>You have no potato chips..</h3>
+            <h3 v-else-if='number === 1'>You have one potato chip!</h3>
+            <h3 v-else>You have<br><big>{{ number }}</big><br>potato chips.</h3>
+            
+
+            <div v-if="number < max_number">
+
+                <p>Tap and make chips!</p>
+                <button v-on:click="add1" id="add1">$</button>
+                <p>
+                    x{{ power }}
+                </p>
+            </div>
+            <div v-if="number >= max_number">
+
+                <p>You can't make more than {{max_number}} chips, go to the casino!</p>
+
+            </div>
+
+
+
+        </div>
+
+        <div v-if="tab === 'upgrades'">
+
+            <p>
+                Here you can boost your earnings!<br>
+                Your balance: <big>{{ number }}</big>.
+            </p>
+
+            <!-- max_number section -->
+
+            <div v-if="max_number===10" class="upgrade_max">
+
+                Upgrade chip storage power from 10 to 20
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(20, 15, 'storage')">Buy for 15</button>
+
+                
+            </div>
+
+            <div v-if="max_number==20" class="upgrade_max">
+
+                Upgrade chip storage power from 20 to 30
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(30, 55, 'storage')">Buy for 55</button>
+
+            </div>
+
+            <div v-if="max_number==30" class="upgrade_max">
+
+                Upgrade chip storage power from 30 to 50
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(50, 110, 'storage')">Buy for 200</button>
+                
+            </div>
+            <div v-if="max_number==50" class="upgrade_max">
+
+                Upgrade chip storage power from 50 to 100
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(100, 500, 'storage')">Buy for 500</button>
+                
+            </div>
+
+
+            <!-- coinflip section -->
+
+            <div v-if="coin_bet_m===0.6" class="upgrade_coinflip">
+
+                Upgrade coinflip winnings from 0.6 to 0.7
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(0.7, 50, 'coin')">Buy for 50</button>
+                
+            </div>
+
+            <div v-if="coin_bet_m===0.7" class="upgrade_coinflip">
+
+                Upgrade coinflip winnings from 0.7 to 0.8
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(0.8, 110, 'coin')">Buy for 110</button>
+                
+            </div>
+
+            <div v-if="coin_bet_m===0.8" class="upgrade_coinflip">
+
+                Upgrade coinflip winnings from 0.8 to 0.9
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(0.9, 800, 'coin')">Buy for 800</button>
+                
+            </div>
+
+            <!-- dice section -->
+
+            <div v-if="dice_bet_m===0.0" class="upgrade_dice">
+
+                Unlock the "Dice" casino game.
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(2.3, 80, 'dice')">Buy for 80</button>
+                
+            </div>
+
+            <div v-if="dice_bet_m===2.3" class="upgrade_dice">
+
+                Upgrade dice winnings from 2.3 to 2.4
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(2.4, 100, 'dice')">Buy for 100</button>
+                
+            </div>
+
+            <!-- blackjack section -->
+
+            <div v-if="blackjack_bet_m===0.0" class="upgrade_blackjack">
+
+                Unlock the "Simpler Blackjack" casino game.
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(1.0, 80, 'blackjack')">Buy for 200</button>
+                
+            </div>
+
+            <div v-if="blackjack_bet_m===1.0" class="upgrade_blackjack">
+
+                Upgrade Simpler Blackjack winnings from 1.0 to 1.1
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(1.1, 400, 'blackjack')">Buy for 400</button>
+                
+            </div>
+
+
+            <!-- power section -->
+
+            <div v-if="power===1" class="upgrade_power">
+
+                Upgrade chip making power from 1 to 2
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(2, 60, 'power')">Buy for 60</button>
+                
+            </div>
+            <div v-if="power===2" class="upgrade_power">
+
+                Upgrade chip making power from 2 to 5
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(5, 300, 'power')">Buy for 300</button>
+                
+            </div>
+            <div v-if="power===5" class="upgrade_power">
+
+                Upgrade chip making power from 5 to 10
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(10, 800, 'power')">Buy for 800</button>
+                
+            </div>
+
+            <!-- win section -->
+            
+            <div v-if="dev===0" class="win">
+
+                Win the game and unlock unlimited money!
+                <br>
+                <button class="upgrade_cost" v-on:click="upgrade(0, 3000, 'win')">Buy for 3000</button>
+                
+            </div>
+
+            <!-- info section -->
+
+            <p>
+                
+                Your chip making power: <big>{{ power }}.</big><br>
+                Your chip storage power: <big>{{ max_number }}.</big>
+                
+
+            </p>
+
+
+        </div>
+
+
+        <div v-if="tab === 'casino'">
+            
+            <p> Casino Games </p>
+                
+                <button v-on:click="tab = 'coinflip'" class="upgrade_coinflip">Coinflip</button>
+                <button v-if="dice_bet_m>0" v-on:click="tab = 'dice'" class="upgrade_dice">Dice</button>
+                <button v-if="blackjack_bet_m>0" v-on:click="tab = 'blackjack'" class="upgrade_blackjack">Simpler Blackjack</button>
+
+
+        </div>
+
+        <div v-if="tab === 'coinflip'"> 
+            <h2 class="title">Coinflip</h2>
+            <p class="subtitle">Throw a coin and test your luck!</p>
+
+            <div class="betbox">
+                <p>Your chips: {{ number }}</p>
+                <div class="bet_count">
+                    Bet:
+                    
+                    <button class="sign_plus" v-on:click="increase_bet">+</button> {{ bet }} <button class="sign_minus" v-on:click="decrease_bet">-</button>
+                    
+                    <br>
+
+                    <table class="bets">
+                        <tr>
+                            <td v-on:click="bet_00(5)">5%</td>
+                            <td v-on:click="bet_00(10)">10%</td>
+                        </tr>
+                        <tr>
+                            <td v-on:click="bet_00(25)">25%</td>
+                            <td v-on:click="bet_00(50)">50%</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" v-on:click="bet = number">ALL-IN</td>
+                        </tr>
+                    
+                    </table>
+
+                    
+                    
+
+                </div>
+                <p>Win: <br>Bet x {{ coin_bet_m }} = {{ Math.round(bet * coin_bet_m) }} <button class="upgrade_info" v-on:click="tab = 'info'" >?</button> </p>
+            
+                
+            </div>
+
+            <div v-if="bet <= number && bet > 0">
+            <br>
+            <button class="play" v-on:click="coinflip(0)">Play heads</button>
+            <br>
+            <button class="play" v-on:click="coinflip(1)">Play tails</button>
+            </div>
+
+        </div>
+
+        <div v-if="tab === 'coinflip_play'">
+
+            <p> It's {{ coin }}! </p>
+
+            <div v-if="coin === 'heads'">
+                <button class="coin" v-on:click="tab = 'coinflip'">O</button>
+            </div>
+            
+            <div v-if="coin === 'tails'">
+                <button class="coin" v-on:click="tab = 'coinflip'">X</button>
+            </div>
+            <br>
+            <div v-if="result==='win'"> You won {{ Math.round(bet * coin_bet_m) }}, now your current balance is {{ number }}. </div>
+            <div v-if="result==='lost'"> You lost {{ bet }}, now your current balance is {{ number }}. </div>
+            <br>
+
+            <button class="play" v-on:click="tab = 'coinflip'">></button>
+
+        </div>
+
+        <div v-if="tab === 'dice'"> 
+            <h2 class="title">Dice</h2>
+            <p class="subtitle">Throw a dice! If you get a six you'll win!</p>
+
+            <div class="betbox">
+                <p>Your chips: {{ number }}</p>
+                <div class="bet_count">
+                    Bet:
+                    
+                    <button class="sign_plus" v-on:click="increase_bet">+</button> {{ bet }} <button class="sign_minus" v-on:click="decrease_bet">-</button>
+                    
+                    <br>
+
+                    <table class="bets">
+                        <tr>
+                            <td v-on:click="bet_00(5)">5%</td>
+                            <td v-on:click="bet_00(10)">10%</td>
+                        </tr>
+                        <tr>
+                            <td v-on:click="bet_00(25)">25%</td>
+                            <td v-on:click="bet_00(50)">50%</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" v-on:click="bet = number">ALL-IN</td>
+                        </tr>
+                    
+                    </table>
+
+                    
+                    
+
+                </div>
+                <p>Win: <br>Bet x {{ dice_bet_m }} = {{ Math.round(bet * dice_bet_m) }} <button class="upgrade_info" v-on:click="tab = 'info'" >?</button> </p>
+            
+                
+            </div>
+
+            <div v-if="bet <= number && bet > 0">
+            <br>
+            <button class="play" v-on:click="dice_play()">Play</button>
+            </div>
+
+        </div>
+
+        <div v-if="tab === 'dice_play'">
+
+            <p> It's a {{ dice }}! </p>
+
+            <div v-if="dice === 6"><button class="dice" v-on:click="tab = 'dice'">
+
+                ●  ●<br>
+                ●  ●<br>
+                ●  ●
+
+            </button>
+            </div>
+
+            <div v-if="dice === 5"><button class="dice" v-on:click="tab = 'dice'">
+
+                ●  ●<br>
+                 ●<br>
+                ●  ●
+
+            </button>
+            </div>
+
+            <div v-if="dice === 4"><button class="dice" v-on:click="tab = 'dice'">
+
+                ●  ●<br>
+                <br>
+                ●  ●
+
+            </button>
+            </div>
+
+            <div v-if="dice === 3"><button class="dice" v-on:click="tab = 'dice'">
+                ●<br>
+                 ●<br>
+                  ● 
+
+            </button>
+            </div>
+
+
+            <div v-if="dice === 2"><button class="dice" v-on:click="tab = 'dice'">
+                ●<br>
+                <br>
+                ●
+
+            </button>
+            </div>
+
+
+            <div v-if="dice === 1"><button class="dice" v-on:click="tab = 'dice'">
+
+                <br>
+                ●<br>
+                
+                
+            
+            </button>
+            </div>
+
+            <br>
+            <div v-if="result==='win'"> You won {{ Math.round(bet * dice_bet_m) }}, now your current balance is {{ number }}. </div>
+            <div v-if="result==='lost'"> You lost {{ bet }}, now your current balance is {{ number }}. </div>
+            <br>
+            <button class="play" v-on:click="tab = 'dice'">></button>
+        
+        </div>
+
+        <div v-if="tab === 'blackjack'"> 
+            <h2 class="title">Simpler Blackjack</h2>
+            <p class="subtitle">The rules are a bit different! <button class="upgrade_info" v-on:click="tab = 'bj_info'" >?</button></p>
+
+            <div class="betbox">
+                <p>Your chips: {{ number }}</p>
+                <div class="bet_count">
+                    Bet:
+                    
+                    <button class="sign_plus" v-on:click="increase_bet">+</button> {{ bet }} <button class="sign_minus" v-on:click="decrease_bet">-</button>
+                    
+                    <br>
+
+                    <table class="bets">
+                        <tr>
+                            <td v-on:click="bet_00(5)">5%</td>
+                            <td v-on:click="bet_00(10)">10%</td>
+                        </tr>
+                        <tr>
+                            <td v-on:click="bet_00(25)">25%</td>
+                            <td v-on:click="bet_00(50)">50%</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" v-on:click="bet = number">ALL-IN</td>
+                        </tr>
+                    
+                    </table>
+
+                    
+                    
+
+                </div>
+                <p>Win: <br>Bet x {{ blackjack_bet_m }} = {{ Math.round(bet * blackjack_bet_m) }} <button class="upgrade_info" v-on:click="tab = 'info'" >?</button> </p>
+            
+                
+            </div>
+
+            <div v-if="bet <= number && bet > 0">
+            <br>
+            <button class="play" v-on:click="blackjack()">Play</button>
+            </div>
+
+
+        </div>
+
+        <div v-if="tab === 'blackjack_play'">
+
+            <p>Your bet: {{ bet }}</p>
+
+            <p>Your cards:</p>
+                
+
+            <button class="bj_card" v-for="value in blackjack_player_show">{{ value }}</button>
+
+            
+
+            
+            
+            <p>Dealer's cards:</p>
+            <button class="bj_card" id="bj_dealer" v-for="value in blackjack_dealer_show">{{ value }}</button>
+
+            <br>
+            <br>
+
+            <div v-if="bj_result==='none'">
+                <button v-on:click="bj_player_card(1)">Card</button> <button v-on:click="bj_player_card(0)">Stop</button> <button button v-on:click="bj_player_card(2)">2x</button>
+            </div>
+
+            <div v-if="bj_result==='win'"> You won {{ Math.round(bet * blackjack_bet_m) }}, now your current balance is {{ number }}. </div>
+            <div v-if="bj_result==='d_busted'"> Dealer busted! You won {{ Math.round(bet * blackjack_bet_m) }}, now your current balance is {{ number }}. </div>
+            <div v-if="bj_result==='lost'"> You lost {{ bet }}, now your current balance is {{ number }}. </div>
+            <div v-if="bj_result==='p_busted'"> You busted! You lost {{ bet }}, now your current balance is {{ number }}. </div>
+            <div v-if="bj_result==='bj'"> You got blackjack! You won {{ Math.round(bet * dice_bet_m) }} now your current balance is {{ number }}. </div>
+            <div v-if="bj_result==='tie'"> It's a tie! You don't win or lose anything. </div>
+            
+            <br>
+            <button v-if="bj_result!=='none'" class="play" v-on:click="tab = 'blackjack'">></button>
+            
+            
+        </div>
+
+        <div v-if="tab === 'bj_info'">
+            <h3> Simpler Blackjack Rules </h3>
+
+            In this simpler version of Blackjack the there are no aces that could count as 11, only ones.<br>
+            <small>Yeah I know it's not optimal..</small><br><br>
+            The dealer will never draw more than three cards.<br><br>
+            
+            You can draw a "Blackjack" with a 1 and a JACK or a JACK and 1 at the start of the game.<br><br>
+            Good luck!<br>
+            <br>
+            <button class="play" v-on:click="tab = 'blackjack'">></button>
+
+
+        </div>
+
+
+        <div v-if="tab === 'info'">
+
+            <h3> Info </h3>
+            Potato Game 2:<br>
+            Casino Royale
+
+            <br>
+
+            <p class="info">
+            Welcome!<br><br>
+            Bets are rounded up and behave in strange ways in this game.<br><br>
+            When you lose, you always lose your bet.<br><br>
+            When you win, you'll win the indicated amount which you can upgrade using chips!<br><br>
+
+            </p>
+
+            
+            <div div v-if="dev===1">
+
+                <h3>Congratulations!</h3>
+                You finished my game!<br>
+                <small>Hope you din't cheat.. ;)</small><br><br>
+                You have unlocked the $ button which gives you 100 chips without any restrictions, and<br>
+                the ♥ button which resets the game with the $ button permanently unlocked.<br><br>
+
+                Thanks for playing!<br><br>
+                
+
+            <button v-on:click="reset()" id="add1">♥</button>
+            <button v-on:click="number += 100, save()" id="add1">$</button>
+            </div>
+
+            <br>
+            <br>
+            <p id="credits">
+                This game was made with love by Giovanni Maiuri
+            </p>
+
+        </div>
+
+
+
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src='main.js'></script>
+
+</body>
+</html>
