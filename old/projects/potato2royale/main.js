@@ -15,7 +15,7 @@ var app = new Vue({
         result: 'none',
 
         coin: 'none',
-        coin_bet_m: 0.0,
+        coin_bet_m: 0.6,
 
         dice: 0,
         dice_bet_m: 0.0,
