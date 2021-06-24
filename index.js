@@ -8,7 +8,7 @@ function subtitle(){
 	var subtitle_show = document.getElementById("subtitle")
 	
 	var tempstring = ""
-	var subtitle_string = "aspiring<br> data_<br> scientist"
+	var subtitle_string = " aspiring<br><br> data<br> scientist "
 	
 	var type_speed = 50
 	
