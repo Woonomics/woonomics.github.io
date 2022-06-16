@@ -1,0 +1,360 @@
+html {
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+body {
+
+    background: #111111;
+    font-family: 'FantasqueSansMonoRegular';
+    color: white;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+button{
+
+    background-color: purple; /* Green */
+    border: 0px;
+    color: white;
+    padding: 10px 12px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    font-family: 'Fantasque Sans Mono';
+
+}
+
+button:hover{
+    background-color: darkcyan;
+    color: white;
+}
+
+
+.menu_button{
+    border-color: white;
+    border-width: 2px;
+    border-style: dotted;
+}
+
+.menu_button:active{
+    border-color: red;
+    background-color: goldenrod;
+    color: black;
+
+}
+
+
+#tabs {
+    margin-top: 30px;
+}
+
+#add1{
+
+    height: 100px;
+    width: 100px;
+    border-radius :50%;
+    border: dashed;
+    border-color: aqua;
+    border-width: thick;
+    font-size: 70px;
+
+}
+
+#add1:active{
+    background-color: darkgoldenrod;
+    border-color: darkred;
+    color: black;
+
+
+}
+
+.subtitle{
+
+    margin-top: -35px;
+
+}
+
+.betbox{
+
+    background-color: darkolivegreen;
+
+    display: inline-block;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 50%;
+    padding: 0px;
+
+}
+
+.bet_count{
+
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 0px;
+    font-size: 140%;
+
+
+}
+
+.sign_plus{
+
+    align-self: center;
+    display: inline-block;
+    background-color: darkgreen;
+    color: white;
+    font-size: 100%;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.sign_minus{
+
+    align-self: center;
+    display: inline-block;
+    background-color: darkred;
+    color: white;
+    font-size: 100%;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.bets{
+    margin-top: 5px;
+    font-size: 80%;
+    text-align: center;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+td{
+    background-color: rgb(128, 98, 23);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+td:hover{
+    background-color: rgb(177, 134, 25);
+    color: white;
+}
+
+td:active{
+    background-color: darkgoldenrod;
+}
+
+.upgrade_info{
+
+    align-self: center;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 100%;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.play{
+
+    color: black;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 10px;
+    position: sticky;
+    font-size: 80%;
+
+}
+
+
+
+.coin{
+
+    color: black;
+    background-color: goldenrod;
+    height: 100px;
+    width: 100px;
+    border-radius :50%;
+    border: dashed;
+    border-color: brown;
+    border-width: thick;
+    font-size: 70px;
+
+}
+
+
+.dice{
+
+    color: black;
+    text-align: center;
+    background-color: white;
+    border-radius : 10px;
+    height: 120px;
+    width: 90px;
+
+    font-size: 120%;
+
+    font-weight: bold;
+
+}
+
+
+.bj_card{
+
+    color: black;
+    text-align: center;
+    background-color: white;
+    border-radius : 10px;
+    height: 120px;
+    width: 90px;
+    margin: 10px;
+    font-size: 180%;
+    font-weight: bold;    
+    border-width: thick;
+    border: dashed;
+    border-color: green;
+
+}
+
+.bj_card:hover{
+
+    background-color: rgb(0, 26, 0);
+    color: white;
+
+}
+
+#bj_dealer{
+
+    border-color: darkred;
+    background-color: white;
+    color: black;
+
+}
+
+#bj_dealer:hover{
+
+    background-color: rgb(37, 0, 0);
+    color: black;
+    color: white;
+
+}
+
+.info{
+    font-size: 70%;
+}
+
+#credits{
+
+    font-size: 50%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.upgrade_max{
+    margin-top: 20px;
+    font-size: 80%;
+    background-color: darkslateblue;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: dashed;
+    border-color: cyan;
+    border-width: thick;
+
+}
+
+.upgrade_cost{
+    background-color: darkgoldenrod;
+    color: white;
+    margin-top: 5px;
+}
+
+.upgrade_coinflip{
+    margin-top: 20px;
+    font-size: 80%;
+    background-color: rgb(75, 55, 4);
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: dashed;
+    border-color: yellow;
+    border-width: thick;
+
+}
+
+.upgrade_dice{
+    margin-top: 20px;
+    font-size: 80%;
+    background-color: rgb(105, 105, 105);
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: dashed;
+    border-color: rgb(44, 44, 44);
+    border-width: thick;
+
+}
+
+.upgrade_blackjack{
+    margin-top: 20px;
+    font-size: 80%;
+    background-color: rgb(43, 43, 107);
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: dashed;
+    border-color: lime;
+    border-width: thick;
+
+}
+
+.upgrade_power{
+    margin-top: 20px;
+    font-size: 80%;
+    background-color: rgb(75, 4, 28);
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: dashed;
+    border-color: cyan;
+    border-width: thick;
+
+}
+
+.win{
+    margin-top: 20px;
+    font-size: 80%;
+    background-color: darkgreen;
+    color: white;
+    display: inline-block;
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    border: dashed;
+    border-color: gold;
+    border-width: thick;
+
+}

@@ -1,0 +1,227 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Potato Game 2</title>
+
+</head>
+
+<body>
+        <footer id="infobar">
+                <p id="info">Test message flash!</p>
+            </footer>
+
+
+    <div id="sidebar" class="collapsed">
+
+        <div id="sidebar_content">
+            <p id="game_menu">
+
+                Menu
+
+            </p>
+            <a class="side_button" onclick="show_make_page()">Make Potatoes</a>
+            <a class="side_button" onclick="show_potato_makers_page()">Potato Makers</a>
+            <a class="side_button" onclick="show_upgrades_page()">Upgrades</a>
+            <a class="side_button" onclick="show_statistics_page()">Statistics</a>
+            <a class="side_button" onclick="show_settings_page()">Settings</a>
+            <a class="side_button" onclick="show_howtoplay_page()">How to play</a>
+            <a class="side_button" onclick="show_about_page()">About</a>
+            <br><br><br><br><br><br><br><br>
+        </div>
+
+
+    </div>
+
+
+
+    <div id="content">
+
+
+
+
+
+        <button id="slider_button" title="toggle sidebar">≡</button>
+
+        <div class="page" id="make_page">
+
+            <h1 class="title" id="main_title">Potato Game 2</h1>
+            <h2 class="subtitle">Make potatoes. Sell Potatoes.</h2>
+
+            <button id="make_power" onclick="increase_power()">Increase Potato Power</button>
+            <button id="power_counter">your power is <a id="power">X</a>!</button>
+
+            <button id="make_potato" onclick="make()">Make Potato</button>
+            
+            <button id="sell_potato" onclick="sell()">Sell ALL Potatoes</button>
+            
+            <button id="price_counter">a potato sells for <a id="potato_price">X</a>$</button>
+
+            <h2 id="main_counter">You have <br>
+                <a class="potato_count">X</a> potatoes <br>
+                and<br>
+                <a id="money_count">X</a> dollars.
+            </h2>
+
+
+
+        </div>
+
+        <div class="page" id="potato_makers_page">
+            <h1 class="title">Potato Makers</h1>
+            <h2 class="subtitle">They make potatoes for you!</h2>
+
+            <div class="potato_maker_container">
+
+                <button class="potato_maker_box">BUY <br> Simple Potato Maker <br><br>
+
+                    <p class="potato_maker_info">you have
+
+                        <a id="simple_potato_maker">X</a><br>
+
+                        Simple Potato Maker, producing
+
+                        <a id="simple_potato_maker-P">X</a>
+
+                        potatoes every 5 seconds.
+
+                    </p>
+
+                </button>
+
+            </div>
+
+            <br>
+
+            <div class="potato_maker_container">
+
+                    <button class="potato_maker_box">BUY <br> Advanced Potato Maker <br><br>
+    
+                        <p class="potato_maker_info">you have
+    
+                            <a id="advanced_potato_maker">X</a><br>
+    
+                            Advanced Potato Maker, producing
+    
+                            <a id="advanced_potato_maker-P">X</a>
+    
+                            potatoes every 5 seconds.
+    
+                        </p>
+    
+                    </button>
+    
+                </div>
+    
+
+
+        </div>
+
+        <div class="page" id="upgrades_page">
+
+            <h1 class="title">Upgrades</h1>
+            <h2 class="subtitle">Powerup!</h2>
+
+
+
+        </div>
+
+        <div class="page" id="statistics_page">
+            <h1 class="title">Game Statistics</h1>
+
+            <h2 class="tot_counter">You made
+                <a class="potato_tot">X</a> potatoes in total.<br>
+            </h2>
+
+
+        </div>
+
+        <div class="page" id="settings_page">
+            <h1 class="title">Game Settings</h1>
+            
+
+
+        </div>
+
+        <div class="page" id="howtoplay_page">
+            <h1 class="title">How to Play</h1>
+
+            <txt>
+                The goal of the game is to make the most potatoes, no question asked.<br><br>
+
+                Iperide, figlio di Glaucippo del demo di Collito (in greco antico: Ὑπερείδης, Hyperéidēs; Atene, 390/389
+                o 389/388 a.C. – luogo controverso, 9 pianepsione 322 a.C.), è stato un oratore e politico ateniese, uno
+                dei dieci oratori attici inclusi nel Canone alessandrino, che fu compilato nel III secolo a.C. da
+                Aristofane di Bisanzio e da Aristarco di Samotracia.
+
+                Di famiglia benestante, entrò in politica da giovane, nel 362 a.C., distinguendosi per delle azioni
+                giudiziarie contro uomini politici molto in vista nell'Atene dell'epoca. Assunta una posizione di
+                rilievo nel partito anti-macedone ateniese (guidato al tempo da Demostene e Licurgo), collaborò con loro
+                nel formare una lega di stati greci contro Filippo II e, dopo la sconfitta subita da questa lega nella
+                battaglia di Cheronea (338 a.C.), promosse un decreto con provvedimenti straordinari per salvare Atene
+                da un eventuale assedio, tra cui la liberazione degli schiavi e dei meteci che si fossero arruolati
+                nell'esercito. Negli anni seguenti, Iperide, pur continuando a militare tra gli antimacedoni, svolse
+                prevalentemente l'attività di logografo, che aveva già intrapreso in precedenza. Nel 324 a.C., in
+                occasione dello scandalo di Arpalo, Iperide si schierò contro Demostene, accusandolo di aver agito
+                contro gli interessi di Atene perché corrotto e ottenendo che fosse dichiarato colpevole. Nel 323 a.C.,
+                alla morte di Alessandro Magno, Iperide e Leostene furono i principali promotori della guerra lamiaca,
+                combattuta contro i Macedoni. Questo conflitto, dopo un iniziale avvio favorevole alla lega greca, vide
+                la morte di Leostene e la disfatta della lega stessa: Demostene riuscì a suicidarsi, mentre Iperide,
+                catturato pochi giorni dopo, fu fatto uccidere dal reggente Antipatro.
+
+                Definito da Piero Treves come "avvocato abile" e "parlatore elegante", ma "politico molto mediocre", e
+                da Carl Schneider come "primo avvocato in senso stretto della storia", Iperide fu apprezzato più come
+                oratore che come politico. Nell'antichità i pareri sulla sua eloquenza erano divergenti: la scuola di
+                Rodi lo prese come modello; gli oratori romani, in particolare Marco Tullio Cicerone, ne ammirarono
+                l’acumen; gli atticisti del II secolo d.C., però, condannarono aspramente la lingua da lui usata, un
+                dialetto attico non puro, contenente alcuni elementi del sermo cotidianus e altri che testimoniavano il
+                passaggio alla koinè ellenistica. Il giudizio di questi ultimi, in particolare di Ermogene di Tarso,
+                pregiudicò la tradizione delle orazioni di Iperide: attualmente delle sue orazioni, sul cui numero,
+                probabilmente 71, le fonti sono comunque discordi, solo 8 sono in buona parte leggibili. Di queste, 6
+                provengono da papiri egiziani non posteriori al III secolo d.C., mentre le altre due sono state
+                rinvenute in un codice bizantino del IX/X secolo, facente parte del Palinsesto di Archimede.
+
+
+            </txt>
+
+        </div>
+
+        <div class="page" id="about_page">
+            <h1 class="title">About the game</h1>
+            <h2 class="subtitle">Potato Game 2</h2>
+
+                <text id="goback" style="font-weight: bold;">Go back to <a style="color: white;" href="../../projects.html"> >>Projects</a></text><br><br>
+
+                -----The game is still unplayable-----<br>
+                I hope you're enjoying making potatoes!<br>
+                This game is made in simple HTML, CSS and plain JavaScript nothing less and nothing more!<br>
+                This website is responsive and mobile friendly!<br>
+                <br>
+
+                This game is the "sequel" of the first Potato Game.<br>
+
+                Potato Game 2 is built "UI-first" and its meant to be a scalable version of its predecessor.<br>
+
+                Here are some of the new features I would like to bring here: story, saving, achievements.
+
+
+
+                <br><br>
+                Made with passion by <a>Giovanni Maiuri</a>.<br>
+
+
+
+        </div>
+
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
