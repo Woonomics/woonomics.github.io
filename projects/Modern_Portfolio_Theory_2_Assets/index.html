@@ -6,12 +6,16 @@
     <title>Lab App</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
+
+
+
 <body>
+
 
     <div class="m-5">
         $e_1 = 0.38 > e_2 = 0.22$
@@ -20,25 +24,51 @@
         <br><br>
         $\rho =$ <span id="rangeValue">0.63</span>
         <br>
+
         <form>
             <div class="form-group">
                 <label for="formControlRange">Change $\rho$ Range</label>
-                <input type="range" class="form-control-range" id="formControlRange", min="-1" max="1" step="0.01", value="0.63">
+                <input type="range" class="form-control-range" id="formControlRange" , min="-1" max="1" step="0.01" ,
+                    value="0.63">
             </div>
         </form>
 
+
+
         <div class="m-5">
+            $\sigma_p^2 =\underbrace{\sigma_(\sigma_1^2 + \sigma_2^2 - 2\rho_{1,2}\sigma_1\sigma_2)}_a\omega^2 + \underbrace{2(\rho_{1,2}\sigma_1\sigma_2^2)}_b\omega + \underbrace{\sigma_2^2}_c$
+            <br>
+            <br>
             $\omega^\star = -\frac{b}{2a} = \frac{\sigma^2_2-\rho\sigma_1\sigma_2}{\sigma_1^2 -
-            2\rho\sigma_1\sigma_2+\sigma_2^2} =$ <span id="mpv_wealth">-0.1437635371117661</span>
+                2\rho\sigma_1\sigma_2+\sigma_2^2} =$ <span id="mpv_wealth">-0.1437635371117661</span>
+            <br>
+            <br>
+            $\sigma_{p_{w^\star}}^2 = a\omega^2 + b\omega + c = $ <span id="mpv_variance">0.63</span>
+            <br>
+        
         </div>
 
         <div>
             <canvas id="chart"></canvas>
         </div>
 
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="script.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            }
+        });
+    </script>
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
