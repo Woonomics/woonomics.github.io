@@ -141,6 +141,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const mpv_wealth = document.getElementById("mpv_wealth");
     const mpv_variance_ = document.getElementById("mpv_variance");
     
+    const mpv_wealth_p = document.getElementById("mpv_wealth_p");
+    const mpv_wealth_p2 = document.getElementById("mpv_wealth_p2");
+
+
+    const Asset_1_strategy = document.getElementById("Asset_1_strategy");
+    const Asset_2_strategy = document.getElementById("Asset_2_strategy");
+    const profit_mpv = document.getElementById("profit_mpv");
+    
     // Initialize a variable to store the value
     let variableValue = 0;
 
@@ -154,6 +162,27 @@ document.addEventListener("DOMContentLoaded", function () {
         dataset_parabula = generateParabolaDataset(var_1, var_2, rho);
         mpv_variance = compute_parabola_parameters(var_1, var_2, rho)
         mpv_variance_.textContent = mpv_variance;
+
+
+        mpv_wealth_p.textContent = (100 * mpv).toPrecision(3)
+        mpv_wealth_p2.textContent = (100 * (1-mpv)).toPrecision(4)
+        profit_mpv.textContent = (Math.abs(100 * mpv)  +  Math.abs(100 * (1-mpv))).toPrecision(4)
+
+
+        if (mpv > 0){
+            Asset_1_strategy.textContent = "Buy"
+            
+        } else { 
+            Asset_1_strategy.textContent = "Short-Sell"
+            
+        };
+
+        if ((100 * (1-mpv)) > 0){
+            Asset_2_strategy.textContent = "Buy"
+        } else {
+
+            Asset_2_strategy.textContent = "Short-Sell"
+        }
 
         scatterChart.data.datasets[0].data = [{ x: mpv, y: mpv_variance }];
         scatterChart.data.datasets[1].data = dataset_parabula;

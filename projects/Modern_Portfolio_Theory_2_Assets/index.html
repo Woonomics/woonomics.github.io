@@ -26,7 +26,7 @@
         <br>
 
         <form>
-            <div class="form-group">
+            <div class="form-group translate-middle-y">
                 <label for="formControlRange">Change $\rho$ Range</label>
                 <input type="range" class="form-control-range" id="formControlRange" , min="-1" max="1" step="0.01" ,
                     value="0.63">
@@ -36,7 +36,7 @@
 
 
         <div class="m-5">
-            $\sigma_p^2 =\underbrace{\sigma_(\sigma_1^2 + \sigma_2^2 - 2\rho_{1,2}\sigma_1\sigma_2)}_a\omega^2 + \underbrace{2(\rho_{1,2}\sigma_1\sigma_2^2)}_b\omega + \underbrace{\sigma_2^2}_c$
+            $\sigma_p^2 =\underbrace{(\sigma_1^2 + \sigma_2^2 - 2\rho_{1,2}\sigma_1\sigma_2)}_a\omega^2 + \underbrace{2(\rho_{1,2}\sigma_1\sigma_2^2)}_b\omega + \underbrace{\sigma_2^2}_c$
             <br>
             <br>
             $\omega^\star = -\frac{b}{2a} = \frac{\sigma^2_2-\rho\sigma_1\sigma_2}{\sigma_1^2 -
@@ -50,6 +50,20 @@
 
         <div>
             <canvas id="chart"></canvas>
+        </div>
+
+        <div class="m-5">
+
+            To we invest $Y = 100$ at $mpv$ (Minimum Portfolio Variance) we would have to:
+            <br><br>
+            <span id="Asset_1_strategy">Sell</span> <b><span id="mpv_wealth_p">x</span>$</b> of Asset 1<br>
+            <span id="Asset_2_strategy">Buy</span> <b><span id="mpv_wealth_p2">x</span>$</b> of Asset 2<br>
+            <br>
+            Total profit would be:  <b><span id="profit_mpv">100</span>$</b>
+
+
+
+
         </div>
 
     </div>
